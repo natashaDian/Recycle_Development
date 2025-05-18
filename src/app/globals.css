@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ddeec4;
+  --foreground: #0c0b0b;
 }
 
 @theme inline {
@@ -24,3 +24,74 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold text-gray-800 font-sans;
+  }
+  p{
+    @apply mt-4 text-lg text-gray-600;
+  }
+  button{
+    @apply hover:shadow-xl hover:-translate-y-1 mt-2 ml-68 w-32  
+    bg-[#b5d685] hover:bg-gray-800 text-white font-bold py-2 
+    px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-50 shadow-md;
+  }
+  input {
+    @apply shadow-md appearance-none border border-gray-300 rounded w-full 
+    py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-amber-50;
+  }
+  a {
+    @apply hover:bg-[#317e56] p-2 rounded transition-colors duration-200 
+    focus:ring-2 focus:outline-none hover:shadow-md hover:text-white font-semibold
+  }
+}
+
+@layer components {
+  .card {
+    @apply  bg-amber-50 h-70 rounded-2xl shadow-md p-6
+  }
+  .card1 {
+    @apply bg-black h-150 rounded-xl p-10 w-full relative
+  }
+  .shadow-right-bottom {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .animate-slideup{
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  .animate-floating{
+    animation: floating 3s ease-in-out infinite;
+  }
+  .animate-delay-100{
+    animation-delay: 100ms;
+  }
+  .animate-delay-300{
+    animation-delay: 300ms;
+  }
+}
+
+@keyframes slideUp{
+  from{
+    trasnform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floating{
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
